@@ -1,1 +1,1 @@
-from
+print("master")
