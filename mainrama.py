@@ -1,31 +1,59 @@
 from clases.claseciclista import Ciclista
-ciclista = Ciclista()
-ciclistas = []
 
-ciclista.name = ""
-ciclista.age = 0
-ciclista.country = ""
-ciclista.team = ""
-ciclista.time = 0
+ciclistas=[]
 
-contador = 0
-
+ciclistarapido=""
+ciclistarapidoage=0
+ciclistarapidocountry=""
+ciclistarapidoteam=""
+ciclistarapidotime=1000
 
 while(True):
-    print("****************  CICLISTAS  ****************")
-    print("***********  Registro de Ciclistas  ********")
-    ingreso = input("Escribe la cantidad de ciclista de la carrera: ")
-    while contador < ingreso:
-        ciclista.name
-        ciclista.age
-        ciclista.country
-        ciclista.team
-        ciclista.time
+    ingreso=input("Por favor ingresar r para registrar un ciclista o f para finalizar --:-- ")
+    if (ingreso == "r"):
+        ciclista= Ciclista()
+        print("")
+        print("--------------------------------------")
+        name=input("1. Digita el nombre del ciclista: ")
+        ciclista.name= name
+        while(True):
+            age=input("2. Digita la edad del ciclista: ")
+            if age.isnumeric():
+                ciclista.age=int(age)
+                break
+            else:
+                print(age+" No es una edad")
+        country=input("3. Digita el pais del ciclista: ")
+        ciclista.country=country
+        team=input("4. Digita el equipo del ciclista: ")
+        ciclista.team=team
+        while(True):
+            time=input("5. Ingrese el tiempo en minutos: ")
+            if time.isnumeric():
+                ciclista.time=int(time)
+                break
+            elif(time == "0"):
+                print("flash o que? es hijo de usaim bolt?")
+            elif(time > "1000"):
+                print("la carrera no dura una eternidad...")
+            else:
+                print(time+" No es un tiempo")
+        ciclistas.append({"nombre":ciclista.name,"edad":ciclista.age,"pais":ciclista.country,"equipo":ciclista.team,"tiempo":ciclista.time})
+        if(ciclista.time<ciclistarapidotime):
+            ciclistarapidotime=ciclista.time
+            ciclistarapido=ciclista.name
+            ciclistarapidoage=ciclista.age
+            ciclistarapidocountry=ciclista.country
+            ciclistarapidoteam=ciclista.team
+        input("Se registro con exito el ciclista")
+    elif(ingreso == "f"):
+        break
     else:
-        print("te equivocaste en la digitacion")
+        print("*error en la digitacion*")
+        input("")
+print(ciclistas)
 
-print(ciclista.name)
-print(ciclista.age)
-print(ciclista.country)
-print(ciclista.team)
-print(ciclista.time)
+print(f"¡El cilista mas rapido con {ciclistarapidotime} minutos es el inigualable {ciclistarapido} con una edad de {ciclistarapidoage}")
+print(f"Del pais del que deberian estar con un gran orgullo {ciclistarapidocountry} del equipo {ciclistarapidoteam} es el ganador!")
+
+

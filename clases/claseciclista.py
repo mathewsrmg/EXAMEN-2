@@ -1,51 +1,43 @@
 class Ciclista:
-    def __init__(self):
-        self.__name: None
-        self.__age: None
-        self.__country: None
-        self.__team: None
-        self.__time: None
-
+    def init(self):
+        self.__nombre=None
+        self.__edad=None
+        self.__equipo=None
+        self.__pais=None
+        self.__tiempo=None
     @property
-    def name(self):
-        return self.__name
+    def nombre(self):
+        return self.__nombre
     @property
-    def age(self):
-        return self.__age
+    def edad(self):
+        return self.__edad
     @property
-    def country(self):
-        return self.__country
+    def equipo(self):
+        return self.__equipo
     @property
-    def team(self):
-        return self.__team
+    def pais(self):
+        return self.__pais
     @property
-    def time(self):
-        return self.__time
+    def tiempo(self):
+        return self.__tiempo 
+    @nombre.setter
+    def nombre(self,nombre):
+        self.__nombre=input("set the nombre using setter: ")
+    @edad.setter
+    def edad(self,edad):
+        self.__edad=int(input("set the edad using setter: "))
+    @equipo.setter
+    def equipo(self,equipo):
+        self.__equipo=input("set the equipo using setter: ")
+    @pais.setter
+    def pais(self,pais):
+        self.__pais=input("set the pais using setter: ")
+    @tiempo.setter
+    def tiempo(self,tiempo):
+        self.__tiempo=int(input("set the tiempo using setter: "))
 
-    @name.setter
-    def name(self,name):
-        self.name = input("Digita el nombre del ciclista: ")
 
-    @age.setter
-    def age(self,age):
-        if(age < 18):
-            print("la edad digitada no es de un ciclista")
-        else:
-            self.age = int(input("Digita la edad del ciclista: "))
 
-    @country.setter
-    def country(self,country):
-        self.country = input("Digita el pais del ciclista: ")
-
-    @team.setter
-    def team(self,team):
-        self.team = input("Digita el equipo del ciclista: ")
-
-    @time.setter
-    def time(self,time):
-        if(time < 0):
-            print("el ciclista no es flash")
-        else:
-            self.time = input("Tiempo del ciclista:")
+    
 
 
