@@ -1,59 +1,51 @@
 from clases.claseciclista import Ciclista
 
+pkj = Ciclista()
 ciclistas=[]
+timers=[]
 
-ciclistarapido=""
-ciclistarapidoage=0
-ciclistarapidocountry=""
-ciclistarapidoteam=""
-ciclistarapidotime=1000
-
-while(True):
-    ingreso=input("Por favor ingresar r para registrar un ciclista o f para finalizar --:-- ")
-    if (ingreso == "r"):
-        ciclista= Ciclista()
-        print("")
-        print("--------------------------------------")
-        name=input("1. Digita el nombre del ciclista: ")
-        ciclista.name= name
-        while(True):
-            age=input("2. Digita la edad del ciclista: ")
-            if age.isnumeric():
-                ciclista.age=int(age)
-                break
-            else:
-                print(age+" No es una edad")
-        country=input("3. Digita el pais del ciclista: ")
-        ciclista.country=country
-        team=input("4. Digita el equipo del ciclista: ")
-        ciclista.team=team
-        while(True):
-            time=input("5. Ingrese el tiempo en minutos: ")
-            if time.isnumeric():
-                ciclista.time=int(time)
-                break
-            elif(time == "0"):
-                print("flash o que? es hijo de usaim bolt?")
-            elif(time > "1000"):
-                print("la carrera no dura una eternidad...")
-            else:
-                print(time+" No es un tiempo")
-        ciclistas.append({"nombre":ciclista.name,"edad":ciclista.age,"pais":ciclista.country,"equipo":ciclista.team,"tiempo":ciclista.time})
-        if(ciclista.time<ciclistarapidotime):
-            ciclistarapidotime=ciclista.time
-            ciclistarapido=ciclista.name
-            ciclistarapidoage=ciclista.age
-            ciclistarapidocountry=ciclista.country
-            ciclistarapidoteam=ciclista.team
-        input("Se registro con exito el ciclista")
-    elif(ingreso == "f"):
-        break
-    else:
-        print("*error en la digitacion*")
-        input("")
+print("ciclistas")
+print("-- seleccione para ingresar  (0)")
+print("-- seleccione para salir del programa  (1)")
+x = input()
+if(x == "0"):
+    while(True):
+        print(" ")
+        print("----------------------------------------------")
+        print("---- 1. Ingresar ciclista")
+        print("---- 2. Terminar")
+        m = input()
+        if(m == "1"):
+            pkj.nombre = ""
+            pkj.edad = 0
+            pkj.equipo = ""
+            pkj.pais = ""
+            pkj.tiempo = 0
+            ciclistas.append({"nombre":pkj.nombre,"edad":pkj.edad,"equipo":pkj.equipo,"pais":pkj.pais,"tiempo":pkj.tiempo})
+            timers.append(pkj.tiempo)
+        else:
+            print(f"no ingresaste mas ciclistas")
+            break
+elif(x == "1"):
+    print("----------------------------------------------")
+    print("gracias por usar nuestros servicios hasta luego.")
+    print("----------------------------------------------")
+else:
+    print(f"No has digitado una opcion valida.")
+    
+ciclistas 
 print(ciclistas)
+mejorTiempo = min(timers)
+next(x for x in ciclistas if x['tiempo'] == mejorTiempo)
 
-print(f"¡El cilista mas rapido con {ciclistarapidotime} minutos es el inigualable {ciclistarapido} con una edad de {ciclistarapidoage}")
-print(f"Del pais del que deberian estar con un gran orgullo {ciclistarapidocountry} del equipo {ciclistarapidoteam} es el ganador!")
+print(f'¡¡¡El cilista con mejor tiempo fue de {mejorTiempo} minutos la increible persona ¡{pkj.nombre}! de nada mas y nada menos que ¡{pkj.edad}! años de edad')
+print(f'del increible equipo de ¡{pkj.equipo}! del pais que deberian estar orgullosos nada mas y nada menos que !{pkj.pais}!!!')
+
+#def consultarCiclista(nombre,edad,equipo,pais,tiempo):
+#    for pkj in ciclistas:
+#        if min(timers) == pkj.tiempo:
+#            print (pkj.nombre, "-", pkj.edad)
+            
+#consultarCiclista()
 
 
