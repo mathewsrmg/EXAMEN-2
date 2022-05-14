@@ -1,5 +1,5 @@
 class Ciclista:
-    def init(self):
+    def __init__(self):
         self.__nombre=None
         self.__edad=None
         self.__equipo=None
@@ -22,19 +22,22 @@ class Ciclista:
         return self.__tiempo 
     @nombre.setter
     def nombre(self,nombre):
-        self.__nombre=input("set the nombre using setter: ")
+        self.__nombre=input("Digite el nombre del ciclista: ")
     @edad.setter
     def edad(self,edad):
-        self.__edad=int(input("set the edad using setter: "))
-    @equipo.setter
-    def equipo(self,equipo):
-        self.__equipo=input("set the equipo using setter: ")
+        self.__edad=int(input("Digite la edad del ciclista: "))
     @pais.setter
     def pais(self,pais):
-        self.__pais=input("set the pais using setter: ")
+        self.__pais=input("Digite el pais del ciclista: ")
+    @equipo.setter
+    def equipo(self,equipo):
+        self.__equipo=input("Digite el equipo del ciclista: ")
     @tiempo.setter
     def tiempo(self,tiempo):
-        self.__tiempo=int(input("set the tiempo using setter: "))
+        self.__tiempo=int(input("Digite el tiempo del ciclista: "))
+
+        
+
 
 
 
