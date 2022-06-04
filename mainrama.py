@@ -55,8 +55,14 @@ else:
 print(ciclistas)
 mejorTiempo = min(timers)
 print(f'¡¡¡El cilista con mejor tiempo fue ')
-print(next(x for x in ciclistas if x['tiempo'] == mejorTiempo))
 
+
+
+#print(next(x for x in ciclistas if x['tiempo'] == mejorTiempo))
+for ciclista in ciclistas:
+    if (ciclista['tiempo']==mejorTiempo):
+      print(f'El cilista con mejor tiempo fue de {ciclista["tiempo"]} el increible persona ¡{ciclista["nombre"]}! de nada mas y nada menos que ¡{ciclista["edad"]}! años de edad')
+      print(f'del increible equipo de ¡{ciclista["equipo"]}! del pais que deberian estar orgullosos nada mas y nada menos que !{ciclista["pais"]}!!!')
 #print(f'¡¡¡El cilista con mejor tiempo fue de {mejorTiempo} minutos la increible persona ¡{pkj.nombre}! de nada mas y nada menos que ¡{pkj.edad}! años de edad')
 #print(f'del increible equipo de ¡{pkj.equipo}! del pais que deberian estar orgullosos nada mas y nada menos que !{pkj.pais}!!!')
 
