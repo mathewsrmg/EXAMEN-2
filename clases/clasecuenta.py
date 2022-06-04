@@ -12,7 +12,7 @@ class Cuenta:
 
     @numero.setter
     def numero(self,numero):
-        self.__numero=int(input("Digite número de cuenta: "))
+        self.__numero=numero
     @saldo.setter
     def saldo(self,saldo):
         self.__saldo=saldo

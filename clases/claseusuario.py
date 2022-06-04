@@ -20,13 +20,13 @@ class Usuario:
     
     @nombre.setter
     def nombre(self,nombre):
-        self.__nombre=input("Digite el nombre: ")
+        self.__nombre=nombre
     @apellido.setter
     def apellido(self,apellido):
-        self.__apellido=input("Digite el apellido: ")
+        self.__apellido=apellido
     @cedula.setter
     def cedula(self,cedula):
-        self.__cedula=int(input("Digite la cedula: "))
+        self.__cedula=cedula
     @ciudad.setter
     def ciudad(self,ciudad):
-        self.__ciudad=input("Digita la ciudad: ")
+        self.__ciudad=ciudad
